@@ -156,3 +156,5 @@ document.getElementById("runFunc").addEventListener("click", () => {
     print(`double(${x}) = ${double(x)}`);
   }
 });
+
+// 배열과 객체
