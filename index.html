@@ -1,0 +1,191 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript 문법 실습 Playground</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <h1 class="title">JavaScript 문법 실습</h1>
+      <p class="subtitle">변수 · 자료형 · if · for · 함수 · 배열/객체</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 안내 -->
+    <section class="card">
+      <h2 class="card__title">사용 방법</h2>
+      <ol class="list">
+        <li><code>index.html</code>, <code>style.css</code>, <code>script.js</code>를 같은 폴더에 둔다.</li>
+        <li>각 섹션의 버튼을 누르면 아래 출력창에 결과가 누적된다.</li>
+        <li>Console 대신 출력창(#output)으로 결과를 확인한다.</li>
+      </ol>
+      <div class="hint">
+        출력창 DOM ID: <code>#output</code> / 지우기 버튼 ID: <code>#clearBtn</code>
+      </div>
+    </section>
+
+    <!-- 출력 -->
+    <section class="card">
+      <div class="row row--between row--wrap">
+        <h2 class="card__title">출력창</h2>
+        <div class="btns">
+          <button class="btn btn--ghost" id="clearBtn" type="button">출력 지우기</button>
+        </div>
+      </div>
+      <div class="output" id="output" aria-live="polite">
+        <div class="output__line output__muted">여기에 결과가 출력됩니다.</div>
+      </div>
+    </section>
+
+    <!-- 1) let/const -->
+    <section class="card">
+      <div class="row row--between row--wrap">
+        <h2 class="card__title">1) let / const</h2>
+        <div class="btns">
+          <button class="btn" id="runLetConst" type="button">예제 실행</button>
+        </div>
+      </div>
+      <p class="desc"><code>let</code> 재할당 가능 / <code>const</code> 재할당 불가.</p>
+      <pre class="code"><code>let a = 10;
+a = 20;
+
+const b = 10;
+// b = 20; // 에러</code></pre>
+    </section>
+
+    <!-- 2) 자료형 -->
+    <section class="card">
+      <div class="row row--between row--wrap">
+        <h2 class="card__title">2) 자료형 (number / string / boolean)</h2>
+        <div class="btns">
+          <button class="btn" id="runTypes" type="button">예제 실행</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="typeA">값 A</label>
+          <input id="typeA" class="input" type="text" placeholder="예: 10 또는 10(문자)" />
+          <small class="help">input은 항상 문자열로 들어온다 → Number로 바꾸면 숫자로 계산 가능</small>
+        </div>
+
+        <div class="field">
+          <label for="typeB">값 B</label>
+          <input id="typeB" class="input" type="text" placeholder="예: 10" />
+        </div>
+      </div>
+
+      <pre class="code"><code>// A, B를 문자열 그대로 더해보기 vs Number로 변환해서 더해보기</code></pre>
+    </section>
+
+    <!-- 3) if -->
+    <section class="card">
+      <div class="row row--between row--wrap">
+        <h2 class="card__title">3) if문 (조건문)</h2>
+        <div class="btns">
+          <button class="btn" id="runIf" type="button">예제 실행</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="scoreInput">점수</label>
+          <input id="scoreInput" class="input" type="number" min="0" max="100" placeholder="0~100" />
+        </div>
+
+        <div class="field">
+          <label class="checkbox">
+            <input id="isLoginInput" type="checkbox" />
+            <span>로그인 상태(isLogin)</span>
+          </label>
+          <small class="help">체크하면 true, 해제하면 false</small>
+        </div>
+      </div>
+
+      <pre class="code"><code>// if (score &gt;= 60) { ... } else { ... }
+// if (isLogin) { ... }</code></pre>
+    </section>
+
+    <!-- 4) for -->
+    <section class="card">
+      <div class="row row--between row--wrap">
+        <h2 class="card__title">4) for문 (반복문)</h2>
+        <div class="btns">
+          <button class="btn" id="runFor" type="button">예제 실행</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="forN">반복 횟수 n</label>
+          <input id="forN" class="input" type="number" min="1" max="50" placeholder="예: 5" />
+        </div>
+        <div class="field">
+          <label for="forText">출력 텍스트</label>
+          <input id="forText" class="input" type="text" placeholder="예: Hello" />
+        </div>
+      </div>
+
+      <pre class="code"><code>// for (let i = 1; i &lt;= n; i++) print(i + ": " + text);</code></pre>
+    </section>
+
+    <!-- 5) function -->
+    <section class="card">
+      <div class="row row--between row--wrap">
+        <h2 class="card__title">5) function (함수)</h2>
+        <div class="btns">
+          <button class="btn" id="runFunc" type="button">예제 실행</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="nameInput">이름</label>
+          <input id="nameInput" class="input" type="text" placeholder="예: 이재욱" />
+        </div>
+        <div class="field">
+          <label for="numInput">숫자</label>
+          <input id="numInput" class="input" type="number" placeholder="예: 7" />
+        </div>
+      </div>
+
+      <pre class="code"><code>// function sayHello(name) { ... }
+// const double = (x) =&gt; x * 2;</code></pre>
+    </section>
+
+    <!-- 6) 배열/객체 -->
+    <section class="card">
+      <div class="row row--between row--wrap">
+        <h2 class="card__title">6) 배열 / 객체</h2>
+        <div class="btns">
+          <button class="btn" id="runArrayObj" type="button">예제 실행</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="itemsInput">배열 입력(쉼표로 구분)</label>
+          <input id="itemsInput" class="input" type="text" placeholder="예: apple, banana, orange" />
+        </div>
+        <div class="field">
+          <label for="userNameInput">유저 이름</label>
+          <input id="userNameInput" class="input" type="text" placeholder="예: Kim" />
+        </div>
+      </div>
+
+      <pre class="code"><code>// items.push("NEW"); user.age += 1;</code></pre>
+    </section>
+
+    <footer class="footer">
+      <span>HTML/CSS/JS 파일 3개를 같은 폴더에 두고 Go Live로 실행</span>
+    </footer>
+  </main>
+</body>
+</html>
