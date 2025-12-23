@@ -158,3 +158,35 @@ document.getElementById("runFunc").addEventListener("click", () => {
 });
 
 // 배열과 객체
+document.getElementById("runArrayObj").addEventListener("click", () => {
+  divider("6) 배열 / 객체");
+
+  // 배열: 쉼표로 나누기
+  const itemsRaw = document.getElementById("itemsInput").value;
+  const items = itemsRaw
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+
+  // 객체
+  const userName = document.getElementById("userNameInput").value || "Kim";
+  const user = { name: userName, age: 22 };
+
+  print(`[배열] 입력: "${itemsRaw}"`);
+  print(`[배열] 파싱 결과: [${items.join(", ")}]`);
+
+  if (items.length > 0) {
+    print(`[배열] 첫 번째 요소 items[0] = ${items[0]}`);
+  } else {
+    print("[배열] 요소가 없습니다. 예: apple, banana, orange");
+  }
+
+  // 배열 수정 예시
+  items.push("NEW");
+  print(`[배열] push("NEW") 후: [${items.join(", ")}]`);
+
+  // 객체 접근/수정
+  print(`[객체] user.name = ${user.name}`);
+  user.age += 1;
+  print(`[객체] user.age += 1 -> ${user.age}`);
+});
