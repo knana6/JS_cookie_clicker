@@ -133,3 +133,26 @@ document.getElementById("runFor").addEventListener("click", () => {
     print(`${i}: ${text}`);
   }
 });
+
+// 5. 함수
+document.getElementById("runFunc").addEventListener("click", () => {
+  divider("5) function (함수)");
+
+  const name = document.getElementById("nameInput").value || "이름없음";
+  const numVal = document.getElementById("numInput").value;
+  const x = safeNumber(numVal, NaN);
+
+  function sayHello(n) {
+    return `안녕하세요 ${n}`;
+  }
+
+  const double = (v) => v * 2;
+
+  print(sayHello(name));
+
+  if (!Number.isFinite(x)) {
+    print("숫자를 입력하면 double(숫자) 예제를 실행합니다.");
+  } else {
+    print(`double(${x}) = ${double(x)}`);
+  }
+});
