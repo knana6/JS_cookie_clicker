@@ -35,6 +35,32 @@ clearBtn.addEventListener("click", () => {
   output.innerHTML = `<div class="output__line output__muted">여기에 결과가 출력됩니다.</div>`;
 });
 
+const steps = Array.from(document.querySelectorAll(".step"));
+const prevStepBtn = document.getElementById("prevStep");
+const nextStepBtn = document.getElementById("nextStep");
+const stepLabel = document.getElementById("stepLabel");
+
+let currentStep = 1;
+const maxStep = steps.length;
+
+function showStep(stepNum) {
+  currentStep = Math.max(1, Math.min(maxStep, stepNum));
+
+  steps.forEach((el) => {
+    const s = Number(el.dataset.step);
+    el.classList.toggle("is-active", s === currentStep);
+  });
+
+  stepLabel.textContent = `Step ${currentStep} / ${maxStep}`;
+  prevStepBtn.disabled = currentStep === 1;
+  nextStepBtn.disabled = currentStep === maxStep;
+}
+
+prevStepBtn.addEventListener("click", () => showStep(currentStep - 1));
+nextStepBtn.addEventListener("click", () => showStep(currentStep + 1));
+
+showStep(1);
+
 // =====================
 // 여기부터 실습용 코드 작성
 // =====================

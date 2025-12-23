@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JavaScript 문법 실습 Playground</title>
+  <title>JavaScript 문법 실습</title>
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
@@ -14,11 +14,17 @@
     <div class="topbar__inner">
       <h1 class="title">JavaScript 문법 실습</h1>
       <p class="subtitle">변수 · 자료형 · if · for · 함수 · 배열/객체</p>
+
+      <div class="stepnav">
+        <button class="btn btn--ghost" id="prevStep" type="button">이전</button>
+        <span class="stepnav__label" id="stepLabel">Step 1 / 6</span>
+        <button class="btn btn--ghost" id="nextStep" type="button">다음</button>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- 안내 -->
+    <!-- 안내 (항상 노출) -->
     <section class="card">
       <h2 class="card__title">사용 방법</h2>
       <ol class="list">
@@ -31,7 +37,7 @@
       </div>
     </section>
 
-    <!-- 출력 -->
+    <!-- 출력 (항상 노출) -->
     <section class="card">
       <div class="row row--between row--wrap">
         <h2 class="card__title">출력창</h2>
@@ -44,8 +50,12 @@
       </div>
     </section>
 
+    <!-- ===================== -->
+    <!-- 여기부터 Step(1~6)만 전환 -->
+    <!-- ===================== -->
+
     <!-- 1) let/const -->
-    <section class="card">
+    <section class="card step is-active" data-step="1">
       <div class="row row--between row--wrap">
         <h2 class="card__title">1) let / const</h2>
         <div class="btns">
@@ -61,7 +71,7 @@ const b = 10;
     </section>
 
     <!-- 2) 자료형 -->
-    <section class="card">
+    <section class="card step" data-step="2">
       <div class="row row--between row--wrap">
         <h2 class="card__title">2) 자료형 (number / string / boolean)</h2>
         <div class="btns">
@@ -86,7 +96,7 @@ const b = 10;
     </section>
 
     <!-- 3) if -->
-    <section class="card">
+    <section class="card step" data-step="3">
       <div class="row row--between row--wrap">
         <h2 class="card__title">3) if문 (조건문)</h2>
         <div class="btns">
@@ -114,7 +124,7 @@ const b = 10;
     </section>
 
     <!-- 4) for -->
-    <section class="card">
+    <section class="card step" data-step="4">
       <div class="row row--between row--wrap">
         <h2 class="card__title">4) for문 (반복문)</h2>
         <div class="btns">
@@ -137,7 +147,7 @@ const b = 10;
     </section>
 
     <!-- 5) function -->
-    <section class="card">
+    <section class="card step" data-step="5">
       <div class="row row--between row--wrap">
         <h2 class="card__title">5) function (함수)</h2>
         <div class="btns">
@@ -161,7 +171,7 @@ const b = 10;
     </section>
 
     <!-- 6) 배열/객체 -->
-    <section class="card">
+    <section class="card step" data-step="6">
       <div class="row row--between row--wrap">
         <h2 class="card__title">6) 배열 / 객체</h2>
         <div class="btns">

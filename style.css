@@ -227,3 +227,19 @@ code{
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.10);
 }
+
+/* step(단계) */
+.step { display: none; }
+.step.is-active { display: block; }
+
+/* topbar 아래 네비 */
+.stepnav{
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.stepnav__label{
+  color: var(--muted);
+  font-size: 13px;
+}
