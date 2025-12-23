@@ -111,3 +111,25 @@ document.getElementById("runIf").addEventListener("click", () => {
     print(`score=${score} -> 불합격`);
   }
 });
+
+// 4. for 반복문
+document.getElementById("runFor").addEventListener("click", () => {
+  divider("4) for문");
+
+  const nVal = document.getElementById("forN").value;
+  const n = safeNumber(nVal, NaN);
+  const text = document.getElementById("forText").value || "Hello";
+
+  if (!Number.isFinite(n) || n < 1) {
+    print("반복 횟수 n을 1 이상 숫자로 입력하세요.");
+    return;
+  }
+
+  // 너무 길어지는 것 방지
+  const limit = Math.min(n, 50);
+  if (n > 50) print("n이 너무 커서 50까지만 출력합니다.");
+
+  for (let i = 1; i <= limit; i++) {
+    print(`${i}: ${text}`);
+  }
+});
