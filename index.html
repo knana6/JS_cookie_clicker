@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cookie Clicker</title>
+
+  <!-- 스타일 파일 연결 -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- 자바스크립트 파일 연결 -->
+  <!-- defer: HTML을 다 읽은 뒤에 JS 실행 -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Cookie Clicker</h1>
+
+    <div class="score-panel">
+      <p>쿠키: <span id="cookieCount">0</span></p>
+      <p>초당 쿠키: <span id="cps">0</span></p>
+    </div>
+
+<div class="cookie-wrap" id="cookieWrap">
+  <button id="cookieBtn" class="cookie-btn">
+    <img id="cookieImg" src="cookie.png" alt="cookie" />
+  </button>
+</div>
+
+
+    <div class="shop">
+      <h2>상점</h2>
+      <button id="upgradeBtn">
+        자동 클릭 구매 (가격: <span id="upgradeCost">50</span>)
+      </button>
+    </div>
+  </div>
+</body>
+</html>
