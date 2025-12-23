@@ -82,3 +82,32 @@ document.getElementById("runTypes").addEventListener("click", () => {
   const isLogin = true;
   print(`[boolean 예시] isLogin = ${isLogin} (true/false)`);
 });
+
+// 3. if 조건문
+document.getElementById("runIf").addEventListener("click", () => {
+  divider("3) if문");
+
+  const scoreVal = document.getElementById("scoreInput").value;
+  const score = safeNumber(scoreVal, NaN);
+
+  const isLogin = document.getElementById("isLoginInput").checked;
+
+  // 로그인 상태 체크
+  if (isLogin) {
+    print("isLogin이 true라서: 로그인 상태입니다.");
+  } else {
+    print("isLogin이 false라서: 로그아웃 상태입니다.");
+  }
+
+  // 점수 조건
+  if (!Number.isFinite(score)) {
+    print("점수가 비어있거나 숫자가 아닙니다. 0~100을 입력해보세요.");
+    return;
+  }
+
+  if (score >= 60) {
+    print(`score=${score} -> 합격`);
+  } else {
+    print(`score=${score} -> 불합격`);
+  }
+});
