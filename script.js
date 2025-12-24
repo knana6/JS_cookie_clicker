@@ -61,6 +61,9 @@ function showStep(stepNum) {
 
     showStep(1);
 
+
+
+
     // =====================
     // 여기부터 실습용 코드 작성
     // =====================
@@ -71,9 +74,10 @@ function showStep(stepNum) {
 
     // =====================
     // 아래에다 코드를 완성해보세요!
+    // a와 b를 선언해보세요
     // =====================
-
-
+    let a  = 10;
+    const b = 20;
     print(`let a = 10 -> a = 20 => a = ${a}`);
     print(`const b = 10 => b는 재할당 불가 (b = 20 하면 에러)`);
     print(`b = ${b}`);
@@ -136,11 +140,11 @@ document.getElementById("runIf").addEventListener("click", () => {
 
     // 로그인 상태 체크
     // TODO: isLogin 값을 이용해서 조건문을 완성해보세요
-    if ( /* 여기에 조건 작성 */ ) {
-    print("isLogin이 true라서: 로그인 상태입니다.");
-    } else {
-    print("isLogin이 false라서: 로그아웃 상태입니다.");
-    }
+    // if ( /* 여기에 조건 작성 */ ) {
+    // print("isLogin이 true라서: 로그인 상태입니다.");
+    // } else {
+    // print("isLogin이 false라서: 로그아웃 상태입니다.");
+    // }
 
     // 점수 조건
     if (!Number.isFinite(score)) {
@@ -149,11 +153,11 @@ document.getElementById("runIf").addEventListener("click", () => {
     }
 
     // TODO: score 값을 이용해서 합격 조건을 작성해보세요
-    if ( /* 여기에 조건 작성 */ ) {
-    print(`score=${score} -> 합격`);
-    } else {
-    print(`score=${score} -> 불합격`);
-    }
+    // if ( /* 여기에 조건 작성 */ ) {
+    // print(`score=${score} -> 합격`);
+    // } else {
+    // print(`score=${score} -> 불합격`);
+    // }
 });
 
 // 4. for 반복문
@@ -178,9 +182,9 @@ document.getElementById("runFor").addEventListener("click", () => {
     // for문의 조건을 완성해보세요
     // (힌트: 시작값, 조건, 증가식)
     // =====================
-    for ( /* 여기에 작성 */ ) {
-    print(`${i}: ${text}`);
-}
+    // for ( /* 여기에 작성 */ ) {
+    // print(`${i}: ${text}`);
+    // }
 });
 
 // 5. 함수
